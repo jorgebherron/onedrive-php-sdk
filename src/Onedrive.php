@@ -105,6 +105,10 @@ class Onedrive
                                 new FlatInjector('$top'),
                                 $scalarSerializer
                             ),
+                            'expand'=>new QueryStringParameterDefinition(
+                                new FlatInjector('$expand'),
+                                $scalarSerializer
+                            ),
                             'orderBy' => new QueryStringParameterDefinition(
                                 new FlatInjector('$orderby'),
                                 $orderBySerializer

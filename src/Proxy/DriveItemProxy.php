@@ -231,12 +231,12 @@ class DriveItemProxy extends BaseItemProxy
                     return new PermissionProxy($this->graph, $permission);
                 }, $permissions) : null;
 
-            case 'thumbnails':
-                $thumbnails = $driveItem->getThumbnails();
-
-                return $thumbnails !== null ? array_map(function (Thumbnail $thumbnail) {
-                    return new ThumbnailProxy($this->graph, $thumbnail);
-                }, $thumbnails) : null;
+                case 'thumbnails':
+                    $thumbnails = $driveItem->getThumbnails();
+                    /*return $thumbnails !== null ? array_map(function (Thumbnail $thumbnail) {
+                        return new ThumbnailProxy($this->graph, $thumbnail);
+                    }, $thumbnails) : null;*/
+                    return $thumbnails;
 
             case 'versions':
                 $versions = $driveItem->getVersions();
